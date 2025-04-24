@@ -23,7 +23,7 @@ const AddJobForm = ({ onAddJob }) => {
       const response = await axiosInstance.post("/api/myjobs", formData, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
-      onAddJob(response.data);
+      onAddJob(response.data.job);
       setFormData({
         company: "",
         job_title: "",
